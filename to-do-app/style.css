@@ -1,0 +1,109 @@
+/* ====== General Styles ====== */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(45, 10, 10);
+  color: #333;
+}
+
+/* ====== Container ====== */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e88e5;
+}
+
+/* ====== Input Group ====== */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  background: #1e88e5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #1565c0;
+}
+
+/* ====== Task List ====== */
+ul {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+li {
+  background: #f1f1f1;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.done {
+  text-decoration: line-through;
+  color: #999;
+  background: #e0e0e0;
+}
+
+li:hover {
+  background: #e8e8e8;
+}
+
+/* ====== Delete Button ====== */
+.delete-btn {
+  margin-left: 15px;
+  cursor: pointer;
+  color: red;
+  font-size: 18px;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+}
+
+/* ====== Clear Button ====== */
+.clear-btn {
+  background-color: #d32f2f;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.clear-btn:hover {
+  background-color: #b71c1c;
+}

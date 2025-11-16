@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 class="title">Student Management App</h1>
+
+    <!-- ADD STUDENT FORM -->
+    <div class="form-container">
+        <input type="text" id="nameInput" placeholder="Student Name">
+        <input type="number" id="ageInput" placeholder="Age">
+        <input type="text" id="gradeInput" placeholder="Grade (A, B, C...)">
+        <button id="addBtn">Add Student</button>
+    </div>
+
+    <!-- SEARCH + FILTER -->
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search student...">
+        
+        <select id="filterGrade">
+            <option value="all">All Grades</option>
+            <option value="A">Grade A</option>
+            <option value="B">Grade B</option>
+            <option value="C">Grade C</option>
+            <option value="D">Grade D</option>
+        </select>
+
+        <button id="sortBtn">Sort by Age ↑↓</button>
+    </div>
+
+    <!-- STUDENT LIST -->
+    <ul id="studentList"></ul>
+
+    <!-- EDIT POPUP -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-box">
+            <h2>Edit Student</h2>
+
+            <input type="text" id="editName">
+            <input type="number" id="editAge">
+            <input type="text" id="editGrade">
+
+            <div class="modal-buttons">
+                <button id="saveEditBtn">Save</button>
+                <button id="cancelEditBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
