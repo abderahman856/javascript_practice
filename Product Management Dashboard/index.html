@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Product Dashboard</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- ADD PRODUCT FORM -->
+    <div class="form-box">
+      <input type="text" id="productName" placeholder="Product name">
+      <input type="number" id="productPrice" placeholder="Price">
+      <select id="productCategory">
+        <option value="">Select category</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Clothes">Clothes</option>
+        <option value="Shoes">Shoes</option>
+      </select>
+      <button id="addBtn">Add Product</button>
+    </div>
+
+    <!-- SEARCH / FILTER / SORT -->
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search product...">
+      <select id="filterCategory">
+        <option value="">All categories</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Clothes">Clothes</option>
+        <option value="Shoes">Shoes</option>
+      </select>
+      <button id="sortBtn">Sort by price</button>
+    </div>
+
+    <!-- PRODUCT LIST -->
+    <div id="productList" class="product-list"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
