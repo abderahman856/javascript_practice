@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Expense Tracker</h1>
+
+    <div class="container">
+
+        <!-- ADD EXPENSE -->
+        <div class="add-box">
+            <input id="titleInput" type="text" placeholder="Expense Title">
+            <input id="amountInput" type="number" placeholder="Amount">
+            
+            <select id="categoryInput">
+                <option value="">Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Bills">Bills</option>
+            </select>
+
+            <button id="addBtn">Add Expense</button>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <input id="searchInput" type="text" placeholder="Search...">
+
+            <select id="filterCategory">
+                <option value="all">All Categories</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Bills">Bills</option>
+            </select>
+
+            <button id="sortBtn">Sort by Amount</button>
+        </div>
+
+        <!-- TOTAL EXPENSES -->
+        <h2 id="totalExpenses">Total: $0</h2>
+
+        <!-- LIST -->
+        <ul id="expenseList"></ul>
+    </div>
+
+
+    <!-- EDIT MODAL -->
+    <div id="modal" class="hidden modal">
+        <div class="modal-content">
+
+            <h2>Edit Expense</h2>
+
+            <input id="editTitle" type="text">
+            <input id="editAmount" type="number">
+
+            <select id="editCategory">
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Bills">Bills</option>
+            </select>
+
+            <button id="saveEditBtn">Save</button>
+            <button id="cancelEditBtn" class="cancel">Cancel</button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
