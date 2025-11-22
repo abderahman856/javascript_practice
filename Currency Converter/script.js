@@ -1,18 +1,16 @@
 const amount = document.getElementById('amount');
 const fromCurrency = document.getElementById('fromCurrency');
-
 const toCurrency = document.getElementById('toCurrency');
 const convertBtn = document.getElementById('convertBtn');
-
 const swapBtn = document.getElementById('swapBtn');
 const resultText = document.getElementById('resultText');
 const errorMessage = document.getElementById('errorMessage');
 
-const API_KEY = "https://api.exchangerate-api.com/v4/latest/USD";
+const API_URL = "https://api.exchangerate-api.com/v4/latest/USD";
 
 async function loadCurrencies() {
     try {
-        const response = await fetch(API_KEY);
+        const response = await fetch(API_URL);
         const data = await response.json();
 
         const currencies = Object.keys(data.rates);
@@ -28,9 +26,14 @@ async function loadCurrencies() {
             option2.textContent = curr;
             toCurrency.appendChild(option2);
         });
+
+        // Default values
+        fromCurrency.value = "USD";
+        toCurrency.value = "EUR";
+
     } catch {
         showError('Failed to load currency list.');
-    };
+    }
 }
 
 loadCurrencies();
@@ -40,10 +43,10 @@ convertBtn.addEventListener('click', convertCurrency);
 async function convertCurrency() {
     const amt = amount.value.trim();
 
-    if ( amt === "" || isNaN(amt) || Number(amt) <= 0 ) {
+    if (amt === "" || isNaN(amt) || Number(amt) <= 0) {
         showError('Please enter a valid number');
         return;
-    };
+    }
 
     try {
         const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency.value}`);
@@ -54,17 +57,18 @@ async function convertCurrency() {
 
         resultText.textContent = `${amt} ${fromCurrency.value} = ${converted} ${toCurrency.value}`;
         errorMessage.classList.add('hidden');
+
     } catch {
-        showError('Something went wrong. please try again')
-    };
-};
+        showError('Something went wrong, please try again.');
+    }
+}
 
 swapBtn.addEventListener('click', () => {
     const temp = fromCurrency.value;
-    toCurrency.value = fromCurrency.value;
+    fromCurrency.value = toCurrency.value;
     toCurrency.value = temp;
 
-    loadCurrencies();
+    convertCurrency(); // Optional: recalculate instantly
 });
 
 function showError(msg) {

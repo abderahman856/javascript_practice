@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li class="nav-item active" data-section="weather">🌦 Weather</li>
+        <li class="nav-item" data-section="todo">📝 To-Do</li>
+        <li class="nav-item" data-section="notes">📚 Notes</li>
+        <li class="nav-item" data-section="calculator">🧮 Calculator</li>
+        <li class="nav-item" id="toggleTheme">🌙 Dark Mode</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+      <!-- WEATHER SECTION -->
+      <section id="weather" class="panel">
+        <h2>Weather Search</h2>
+        <div class="weather-box">
+          <input id="cityInput" type="text" placeholder="Enter city..." />
+          <button id="searchBtn">Search</button>
+          <p id="weatherError" class="error hidden"></p>
+          <div id="weatherResult" class="hidden">
+            <h3 id="cityName"></h3>
+            <img id="weatherIcon" />
+            <p id="temperature"></p>
+            <p id="condition"></p>
+            <p>Humidity: <span id="humidity"></span>%</p>
+            <p>Wind: <span id="wind"></span> m/s</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TODO SECTION -->
+      <section id="todo" class="panel hidden">
+        <h2>To-Do List</h2>
+        <div class="todo-input">
+          <input id="todoInput" type="text" placeholder="Add a task..." />
+          <button id="addTodoBtn">Add</button>
+        </div>
+        <ul id="todoList"></ul>
+      </section>
+
+      <!-- NOTES SECTION -->
+      <section id="notes" class="panel hidden">
+        <h2>Notes</h2>
+        <textarea id="noteText" placeholder="Write your note..."></textarea>
+        <button id="saveNoteBtn">Save Note</button>
+        <div id="notesContainer"></div>
+      </section>
+
+      <!-- CALCULATOR -->
+      <section id="calculator" class="panel hidden">
+        <h2>Calculator</h2>
+        <div class="calc">
+          <input id="calcDisplay" readonly />
+          <div class="keys">
+            <button class="key">7</button><button class="key">8</button><button class="key">9</button><button class="key op">/</button>
+            <button class="key">4</button><button class="key">5</button><button class="key">6</button><button class="key op">*</button>
+            <button class="key">1</button><button class="key">2</button><button class="key">3</button><button class="key op">-</button>
+            <button class="key">0</button><button class="key">.</button><button id="equal">=</button><button class="key op">+</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
